@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 from django.core.validators import MaxValueValidator,MinValueValidator
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
 import datetime
@@ -36,6 +37,10 @@ class Question(models.Model):
 
     def __unicode__(self):
         return self.question_text
+
+    def get_absolute_url(self):
+        return reverse('update',kwargs={'pk':self.pk})
+
     class Meta:
         verbose_name='问题库'
         verbose_name_plural='问题库'
