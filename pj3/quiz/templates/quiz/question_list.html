@@ -1,7 +1,7 @@
 <!-- {{question_list}} -->
 <ul>
 {% for q in question_list %}	
-	<li>{{q.question_text}} {{q.pub_date}}</li>
+	<li><a href="{{q.get_absolute_url}}">{{q.question_text}}</a></li>
 {% endfor %}
 </ul>
 
