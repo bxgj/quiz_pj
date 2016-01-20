@@ -1,6 +1,9 @@
-<h1>add Question</h1>
-
-<form action="{% url "question-new" %}" method="POST"> 
+{% if question.id %} 
+	<h1>Edit Contact</h1> 
+{% else %} 
+	<h1>Add Contact</h1> 
+{% endif %} 
+<form action="{{ action }}" method="POST">
 	{% csrf_token %} 
 	<ul> {{ form.as_ul }} </ul> 
 	<input id="save_question" type="submit" value="Save" /> 

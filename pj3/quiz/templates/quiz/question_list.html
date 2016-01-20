@@ -1,7 +1,10 @@
 <!-- {{question_list}} -->
 <ul>
 {% for q in question_list %}	
-	<li><a href="{{q.get_absolute_url}}">{{q.question_text}}</a></li>
+	<li>
+		<a href="{{q.get_absolute_url}}">{{q.question_text}}</a>
+		<a href="{% url 'question-edit' pk=q.id %}">edit</a>
+	</li>
 {% endfor %}
 </ul>
 
