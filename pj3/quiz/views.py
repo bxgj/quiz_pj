@@ -26,7 +26,7 @@ class QuestionUpdate(UpdateView):
     fields=['question_text',]
     template_name='quiz/question_edit.html'
     context_object_name='myquestion'
-    success_url=reverse_lazy('question-list')
+    #success_url=reverse_lazy('question-list')
     # if not defind success_url will only redirect to question-detail 
     def get_queryset(self):
         queryset=Question.objects.filter(pk=self.kwargs['pk'])
