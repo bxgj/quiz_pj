@@ -1,0 +1,8 @@
+<h1>Delete Question</h1>
+<p>Are you sure to delete the question {{question}} ? </p>
+
+<form action="{% url "question-delete" pk=question.id %}" method="POST"> 
+{% csrf_token %} 
+<input type="submit" value="Yes, delete." /> 
+<a href="{% url "question-list" %}">No, cancel.</a> 
+</form>

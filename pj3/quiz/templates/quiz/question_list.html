@@ -4,6 +4,7 @@
 	<li>
 		<a href="{{q.get_absolute_url}}">{{q.question_text}}</a>
 		<a href="{% url 'question-edit' pk=q.id %}">edit</a>
+		<a href="{% url 'question-delete' pk=q.id %}">delete</a>
 	</li>
 {% endfor %}
 </ul>
